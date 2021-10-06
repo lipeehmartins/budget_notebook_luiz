@@ -8,16 +8,13 @@ class TransactionList(generics.ListAPIView):
     queryset = Transaction.objects.order_by('created_at').reverse().all()[:20]
     serializer_class = TransactionSerializer
 
-
 class TransactionAdd(generics.CreateAPIView):
     queryset = Transaction.objects.all()
     serializer_class = TransactionSerializer
 
-
 class TransactionUpdate(generics.RetrieveAPIView, generics.UpdateAPIView):
     queryset = Transaction.objects.all()
     serializer_class = TransactionSerializer
-
 
 class TransactionDelete(generics.DestroyAPIView):
     queryset = Transaction.objects.all()
