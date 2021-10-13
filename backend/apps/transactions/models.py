@@ -21,7 +21,7 @@ class Transaction(models.Model):
         'Type', blank=False, null=False, max_length=14, choices=Option.choices
     )
     amount = models.DecimalField(
-       'Amount', max_digits=10, decimal_places=2
+        'Amount', max_digits=10, decimal_places=2, default=0
     )
     created_at = models.DateTimeField(
         'Created Datetime', blank=True, auto_now_add=True 

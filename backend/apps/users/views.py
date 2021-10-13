@@ -10,3 +10,5 @@ class UserSignUp(generics.CreateAPIView):
 class UserSignIn(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSignInSerializer
+
+

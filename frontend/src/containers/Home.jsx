@@ -1,37 +1,30 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import Loading from "../assets/img/loading.gif";
-import PostForm from "../components/Posts/PostForm";
-import Post from "../components/Posts/Post";
-import { fetchPosts } from "../reducks/posts/operations";
-import { getPosts } from "../reducks/posts/selectors";
+import React from "react";
+import { Header } from "../components/common/Header";
+import { Table } from "../components/common/Table";
+
 
 const Home = () => {
-  const dispatch = useDispatch();
-  const selector = useSelector((state) => state);
-  const posts = getPosts(selector);
-
-  useEffect(() => {
-    dispatch(fetchPosts());
-  }, []);
 
   return (
-    <section class="content">
-      <PostForm />
-      <section class="posts">
-        {posts.length > 0 ? (
-          <ul>
-            {posts.map((post) => (
-              <Post key={post.id} post={post} />
-            ))}
-          </ul>
-        ) : (
-          <div class="loading">
-            <img src={Loading} class="" />
+    <>
+    <Header/>
+      <div class="actions">
+        <div class="name">
+          <h2>Mike Tyson</h2>
+        </div>
+        <div class="context">
+          <div class="add">
+            <button type="submit" class="add-submit">Add +</button>
           </div>
-        )}
-      </section>
-    </section>
+          <div class="p">
+            <p id="table">Tables</p>
+            <p class="report">Report</p>
+          </div>
+            <Table/>
+          </div>
+        </div>
+    </>
+
   );
 };
 
