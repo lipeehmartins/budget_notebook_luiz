@@ -43,44 +43,44 @@ export const SignUp = () => {
     return (
         <>
             <Header />
-            <div className="signuppage">
-                <div class="background" style={{
+            <div ClassName="signuppage">
+                <div ClassName="background" style={{
                     background: `linear-gradient(to right, #00000090, #00000090), url(${Background})`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'cover',
                 }} >
-                    <div class="main">
-                        <div class="container">
-                            <div class="main-content">
+                    <div ClassName="main">
+                        <div ClassName="container">
+                            <div ClassName="main-content">
                                 <h2>Sign up and manage your balance</h2>
                                 <h3>Note down your expenses and income, then check your balance out everyday.</h3>
                             </div>
-                            <div class="form">
-                                <div class="signup">
-                                    <div class="form-group">
-                                        <label class="email">Email address</label>
-                                        <input class="email-input" name="email"
+                            <div ClassName="form">
+                                <div ClassName="signup">
+                                    <div ClassName="form-group">
+                                        <label ClassName="email">Email address</label>
+                                        <input ClassName="email-input" name="email"
                                             type="email"
                                             value={values.email}
                                             onChange={handleInputChange} placeholder="Type your email" />
-                                            {errors.email ? <span className="error-text">{errors.email[0]}</span> : null}
+                                            {errors.email ? <span ClassNameName="error-text">{errors.email[0]}</span> : null}
                                     </div>
-                                    <div class="form">
-                                        <label class="password">Password</label>
-                                        <div class="password-input">
-                                            <input class="input" name="password"
+                                    <div ClassName="form">
+                                        <label ClassName="password">Password</label>
+                                        <div ClassName="password-input">
+                                            <input ClassName="input" name="password"
                                                 type="password"
                                                 value={values.password}
                                                 onChange={handleInputChange} placeholder="Type password" />
-                                            <div class="line"></div>
-                                            <input  class="input" name="password_confirmation"
+                                            <div ClassName="line"></div>
+                                            <input  ClassName="input" name="password_confirmation"
                                                 type="password"
                                                 value={values.password_confirmation}
                                                 onChange={handleInputChange} placeholder="Re-Type password" />
-                                                {errors.password ? <span className="error-text">{errors.password[0]}</span> : null}
+                                                {errors.password ? <span ClassNameName="error-text">{errors.password[0]}</span> : null}
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn-submit" onClick={onSubmit} href="home.html"> {isLoading ? "Registering..." : "Register"}</button>
+                                    <button type="submit" ClassName="btn-submit" onClick={onSubmit}> {isLoading ? "Registering..." : "Register"}</button>
                                 </div>
                             </div>
                         </div>

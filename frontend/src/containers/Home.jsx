@@ -8,17 +8,17 @@ const Home = () => {
   return (
     <>
     <Header/>
-      <div class="actions">
-        <div class="name">
+      <div className="actions">
+        <div className="name">
           <h2>Mike Tyson</h2>
         </div>
-        <div class="context">
-          <div class="add">
-            <button type="submit" class="add-submit">Add +</button>
+        <div className="context">
+          <div className="add">
+            <button type="submit" className="add-submit">Add +</button>
           </div>
-          <div class="p">
+          <div className="p">
             <p id="table">Tables</p>
-            <p class="report">Report</p>
+            <p className="report">Report</p>
           </div>
             <Table/>
           </div>
