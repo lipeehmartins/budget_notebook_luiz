@@ -1,34 +1,29 @@
-from django.db import models
 from apps.users.models import User
-from django.utils.translation import gettext_lazy as _
-
-# Create your models here.
+from django.db import models
+from config.constants import *
+from django.core.validators import MinValueValidator
 
 class Transaction(models.Model):
     class Meta(object):
         db_table = 'transaction'
-    class Option(models.TextChoices): 
-        EXPENSES = 'EX', _('expenses')
-        INCOME = 'IN', _('income')
-        
-    user_id = models.ForeignKey(
-        User, on_delete=models.CASCADE
-    )
+
     name = models.CharField(
-        'Name', blank=False, null=False, max_length=14, db_index=True
+        'Name', blank=False, null=False, max_length=200
+    )
+    user_id = models.ForeignKey(
+        User, related_name='related_user_id', on_delete=models.CASCADE, db_index=True
     )
     type = models.CharField(
-        'Type', blank=False, null=False, max_length=14, choices=Option.choices
+        'Type', blank=False, null=False, max_length=50, choices=TRANSACTION_TYPE
     )
-    amount = models.DecimalField(
-        'Amount', max_digits=10, decimal_places=2, default=0
+    amount = models.IntegerField(
+        'Amount', blank=False, null=False, validators=[
+            MinValueValidator(1)
+        ]
     )
     created_at = models.DateTimeField(
-        'Created Datetime', blank=True, auto_now_add=True 
+        'Creation Date', blank=True, auto_now_add=True
     )
     updated_at = models.DateTimeField(
-        'Updated Datetime', blank=True, auto_now=True
+        'Update Date', blank=True, auto_now=True
     )
-
-    def __str__(self):
-        return self.name
