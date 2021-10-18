@@ -90,7 +90,7 @@ export default function Table() {
 		await dispatch(addTransaction(values));
 		await dispatch(fetchTransactions({ page }));
 		await dispatch(fetchReportTransactions());
-		setValues({ type: "income", name: "", amount: 0 });
+		setValues({ type: "", name: "", amount: 0 });
 	};
 
 	const updateReportHandler = async () => {
@@ -111,7 +111,7 @@ export default function Table() {
 	};
 
 	const openAddReportModalHandler = () => {
-		setValues({ type: "income", name: "", amount: 0 });
+		setValues({ type: "", name: "", amount: 0 });
 		setOpenModal(true);
 	};
 
