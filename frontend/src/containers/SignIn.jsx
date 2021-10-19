@@ -1,10 +1,9 @@
 import React from 'react'
 import { useState } from "react";
-import {  signIn } from "../reducks/users/operations";
+import { signIn } from "../reducks/users/operations";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { getUser } from '../reducks/users/selectors';
-import { signInError } from '../reducks/users/actions';
 import Header from '../components/common/Header';
 
 
@@ -32,7 +31,6 @@ export const SignIn = () => {
     };
 
     const onSubmit = async () => {
-        dispatch(signInError({ password: ['Password is wrong.'] }));
         setIsLoading(true);
         await dispatch(signIn(values));
         setIsLoading(false);

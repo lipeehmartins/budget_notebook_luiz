@@ -16,7 +16,7 @@ export default function createStore(history) {
             thunk
         ),
         // DEBUG MODE
-        // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
        )
     );
 }

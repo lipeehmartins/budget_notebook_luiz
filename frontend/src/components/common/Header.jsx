@@ -22,7 +22,7 @@ const Header = () => {
             {
                 token ? 
                 <button onClick={() => setOpenModalConfirmation(true)} className="sign-out-btn">Sign out</button>
-                : <Link to="/signin">Sign in</Link>
+                : <Link to="/signup">Sign up</Link>
                 // location.pathname === '/' ? (<Link to="/sign-in">Sign in</Link>) : <Link to="/">Sign Up</Link>
             }
             </div>
@@ -41,7 +41,7 @@ const Header = () => {
                                     dispatch(signOutAction())
                                     localStorage.removeItem("BUDGET_NOTEBOOK_LOGIN_USER_KEY")
                                     setOpenModalConfirmation(false)
-                                    history.push('/');
+                                    history.push('/signin');
                                 }}>
 									Yes
 								</button>

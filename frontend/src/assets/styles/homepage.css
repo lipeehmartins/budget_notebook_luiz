@@ -141,8 +141,8 @@
 .container--tabs .tabs--active {
     background-color: #BBDCEB;
     color: #000000;
-    z-index: 99;
-    height: 40px;
+    z-index: 1;
+    height: 43px;
     box-shadow: 10px -8px 20px -13px #25729b
 }
 
@@ -362,7 +362,7 @@
     border-radius: 12px;
     border: 1px solid #003664;
     color: #003664;
-    width: 750px;
+    width: 728px;
 }
 
 .chart-title {
