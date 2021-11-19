@@ -3,6 +3,7 @@ from .models import Transaction
 
 # Register your models here.
 
+
 @admin.register(Transaction)
 class TransactionModel(admin.ModelAdmin):
     fields = ['name', 'type', 'amount', 'user_id']

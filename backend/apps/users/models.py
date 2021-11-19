@@ -1,30 +1,27 @@
 from django.db import models
 
-
 class User(models.Model):
     class Meta(object):
         db_table = 'user'
-    name = models.CharField(
-        'Name', blank=False, null=False, max_length=14, db_index=True, default='Anonymous'
-    )
-    email = models.EmailField(
-        'Email', blank=False, null=False, max_length=254
+
+    email = models.CharField(
+        'Email', blank=False, null=False, max_length=255
     )
     password = models.CharField(
-        'Password', blank=False, null=False, max_length=500
+        'Password', blank=False, null=False, max_length=255
     )
     token = models.CharField(
-        'Token', blank=False, null=False, max_length=500
+        'Token', blank=True, null=True, max_length=255, db_index=True
     )
-    token_expires_at = models.DateTimeField(
-        'Token expires at', blank=False, null=False
+    token_expires = models.DateTimeField(
+        'Token Expiration Date', blank=True, null=True
     )
     created_at = models.DateTimeField(
-        'Created Datetime', blank=True, auto_now_add=True 
+        'Creation Date', blank=True, auto_now_add=True
     )
     updated_at = models.DateTimeField(
-        'Updated Datetime', blank=True, auto_now=True
+        'Update Date', blank=True, auto_now=True
     )
-    def __str__(self):
-        return self.name
 
+    def __str__(self):
+        return self.email

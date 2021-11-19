@@ -19,4 +19,5 @@ const initialState = {
         reports: []
     }
 }
+
 export default initialState;

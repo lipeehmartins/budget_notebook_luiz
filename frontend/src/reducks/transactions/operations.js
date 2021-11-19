@@ -7,7 +7,9 @@ import {
     fetchTransactionsAction,
     updateTransactionAction,
 } from './actions';
+
 const api = new API();
+
 export const fetchTransactions = (query) => {
     return async (dispatch) => {
         return api.getTransactions(query)
@@ -16,6 +18,7 @@ export const fetchTransactions = (query) => {
             });
     }
 }
+
 export const addTransaction = (addTransactionBody) => {
     return (dispatch) => {
         return api.addTransactions(addTransactionBody)
@@ -26,6 +29,7 @@ export const addTransaction = (addTransactionBody) => {
             });
     }
 }
+
 export const updateTransaction = (updateTransactionBody, id) => {
     return (dispatch) => {
         return api.updateTransactions(updateTransactionBody, id)
@@ -36,6 +40,7 @@ export const updateTransaction = (updateTransactionBody, id) => {
             });
     }
 }
+
 export const deleteTransaction = (id) => {
     return (dispatch) => {
         return api.deleteTransactions(id)
@@ -46,6 +51,7 @@ export const deleteTransaction = (id) => {
             });
     }
 }
+
 export const fetchReportTransactions = (params = {}) => {
     return async (dispatch) => {
         return api.getReportTransactions(params)

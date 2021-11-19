@@ -1,4 +1,6 @@
-/*------------------------- Table -------------------------*/
+/*****************************
+* Table
+******************************/
 
 .container--report table {
     border-collapse: separate;
@@ -141,8 +143,8 @@
 .container--tabs .tabs--active {
     background-color: #BBDCEB;
     color: #000000;
-    z-index: 1;
-    height: 43px;
+    z-index: 99;
+    height: 40px;
     box-shadow: 10px -8px 20px -13px #25729b
 }
 
@@ -178,7 +180,6 @@
     color: #003664;
     font-size: 18px;
     font-weight: 700;
-    margin-bottom: 0px;
 }
 
 .container-header {
@@ -362,7 +363,7 @@
     border-radius: 12px;
     border: 1px solid #003664;
     color: #003664;
-    width: 728px;
+    width: 750px;
 }
 
 .chart-title {
@@ -878,3 +879,4 @@
     }
 
 }
+

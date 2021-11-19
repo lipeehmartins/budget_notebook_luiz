@@ -1,13 +1,3 @@
-export const SIGN_IN = "SIGN_IN";
-export const signInAction = (user) => {
-    return {
-        type: "SIGN_IN",
-        payload: {
-            user
-        },
-    };
-};
-
 export const SIGN_UP = "SIGN_UP";
 export const signUpAction = (user) => {
     return {
@@ -18,13 +8,23 @@ export const signUpAction = (user) => {
     };
 };
 
-export const SIGN_OUT = "SIGN_OUT";
-export const signOutAction = (user) => {
+export const SIGN_UP_ERROR = "SIGN_UP_ERROR";
+export const signUpError = (errors) => {
     return {
-        type: "SIGN_OUT",
+        type: SIGN_UP_ERROR,
+        payload: {
+            errors
+        }
+    };
+};
+
+export const SIGN_IN = "SIGN_IN";
+export const signInAction = (user) => {
+    return {
+        type: SIGN_IN,
         payload: {
             user
-        },
+        }
     };
 };
 
@@ -38,12 +38,9 @@ export const signInError = (errors) => {
     };
 };
 
-export const SIGN_UP_ERROR = "SIGN_UP_ERROR";
-export const signUpError = (errors) => {
+export const SIGN_OUT = "SIGN_OUT";
+export const signOutAction = () => {
     return {
-        type: SIGN_UP_ERROR,
-        payload: {
-            errors
-        }
+        type: SIGN_OUT
     };
 };

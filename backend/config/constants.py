@@ -1,3 +1,6 @@
+##############################
+# Transaction
+##############################
 TRANSACTION_TYPE = (
     ('income', 'Income'),
     ('expense', 'Expense'),

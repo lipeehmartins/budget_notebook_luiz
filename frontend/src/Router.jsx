@@ -2,9 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import Home from "./containers/Home";
-import { SignIn } from "./containers/SignIn";
-import {SignUp } from "./containers/SignUp";
-import  Table  from "./components/common/Table";
+import SignIn from "./containers/SignIn";
+import Report from "./containers/Report";
 import { fetchUserFromLocalStorage } from "./reducks/users/operations";
 import { getUser } from "./reducks/users/selectors";
 
@@ -21,9 +20,8 @@ const Router = () => {
     return (
         <React.Fragment>
             <Switch>
-                <Route exact path={"/"} component={token ? Table : Home} />
-                <Route exact path={"/signin"} component={token ? Table : SignIn} />
-                <Route exact path={"/signup"} component={SignUp} />
+                <Route exact path={"/"} component={token ? Report : Home} />
+                <Route exact path={"/sign-in"} component={token ? Report : SignIn} />
             </Switch>
         </React.Fragment>
     );

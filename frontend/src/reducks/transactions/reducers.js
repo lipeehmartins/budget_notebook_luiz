@@ -1,5 +1,6 @@
 import initialState from '../store/initialState';
 import * as Actions from './actions';
+
 export const TransactionsReducer = (state = initialState.transactions, action) => {
     switch (action.type) {
         case Actions.FETCH_TRANSACTIONS:
@@ -34,7 +35,7 @@ export const TransactionsReducer = (state = initialState.transactions, action) =
         case Actions.ERRORS_TRANSACTION:
             return {
                 ...state,
-                errors: action.payload.errors.response,
+                errors: action.payload.errors.response.data,
             }
         case Actions.FETCH_REPORT_TRANSACTIONS:
             return {
